@@ -59,7 +59,7 @@ function App() {
 
     const fetchQuestionsForCategory = async (id) => {
         console.log('fetch questions for this category id', id);
-        let res = await fetch(`http://localhost:3000/api/v1/categories/${id}/questions`);
+        let res = await fetch(`${apiUrl}/api/v1/categories/${id}/questions`);
         let data = await res.json();
         console.log(data);
         setQuestions(data);
@@ -69,7 +69,7 @@ function App() {
 
     const fetchAnswersForQuestion = async (id) => {
         console.log('fetch answers for this question id', id);
-        let res = await fetch(`http://localhost:3000/api/v1/categories/:categoryId/questions/${id}/answers`);
+        let res = await fetch(`${apiUrl}/api/v1/categories/:categoryId/questions/${id}/answers`);
         let data = await res.json();
         console.log(data);
         setAnswers(data);
