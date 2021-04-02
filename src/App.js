@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
 import {
     BrowserRouter as Router,
@@ -8,9 +8,9 @@ import {
 } from "react-router-dom";
 import Dashboard from "./dashboard";
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
-import { Button, List, Collapse, Breadcrumb, Row, Col, notification } from 'antd';
+import { Button, Collapse, Row, Col, notification } from 'antd';
 const { Panel } = Collapse;
 
 
@@ -101,10 +101,10 @@ function Auth() {
                     </Col>
                     <Col span={24} className={'mt-5'}>
                         <input type="password" value={retypePassword} onChange={(ev) => setRetypePassword(ev.currentTarget.value)} required className={'border p-1 mr-5 w-2/3'} placeholder={'Retype Password'} />
-                        {(signupPassword != retypePassword) && <small className={'text-red-500 font-bold'}>Passwords don't match</small>}
+                        {(signupPassword !== retypePassword) && <small className={'text-red-500 font-bold'}>Passwords don't match</small>}
                     </Col>
                     <Col span={24} className={'mt-5'}>
-                        <Button htmlType={'submit'} disabled={signupPassword != retypePassword} type={'primary'}>Submit</Button>
+                        <Button htmlType={'submit'} disabled={signupPassword !== retypePassword} type={'primary'}>Submit</Button>
                         {/*<Button loading={loading} disabled={password != retypePassword} type="primary" htmlType={'submit'} className={'border-0 w-full rounded font-bold'}>Submit</Button>*/}
                     </Col>
                 </Row>

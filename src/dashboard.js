@@ -1,9 +1,9 @@
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css'; 
 
 import React, { useEffect, useState } from "react";
 
-import { Button, List, Collapse, Breadcrumb } from 'antd';
+import { Button, List, Collapse } from 'antd';
 const { Panel } = Collapse;
 
 
@@ -204,7 +204,7 @@ function Dashboard() {
                         bordered
                         dataSource={categories}
                         renderItem={category => <List.Item>
-                            <div className={category.id == selectedCategory ? 'cursor-pointer text-blue-500 font-bold' : 'cursor-pointer'} onClick={() => {
+                            <div className={category.id === selectedCategory ? 'cursor-pointer text-blue-500 font-bold' : 'cursor-pointer'} onClick={() => {
                                 setSelectedCategory(category.id);
                                 fetchQuestionsForCategory(category.id)
                             }}>
